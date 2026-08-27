@@ -1,14 +1,10 @@
-talents = int(input("Enter talents: "))
+talents = float(input("Enter talents: "))
 
-pounds = int(input("Enter pounds: "))
+pounds = float(input("Enter pounds: "))
 
 lots = float(input("Enter lots: "))
 
-
-
 total_grams = (talents * 20 * 32 + pounds * 32 + lots) * 13.3
-
-
 
 kilograms = int(total_grams // 1000)
 
