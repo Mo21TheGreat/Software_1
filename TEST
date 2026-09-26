@@ -1,6 +1,0 @@
-class Dog:   
-    def __init__(self, name, year_of_birth, bark="woof")
-        self.name = name
-        self.year_of_birth = year_of_birth
-        self.bark
-        
