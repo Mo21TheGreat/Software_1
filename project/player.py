@@ -4,6 +4,10 @@ class Player:
         self.items = []
         self.location = location
 
+    def move(self, new_location):
+        self.location = new_location
+        print("You moved to:", self.location.name)
+
     def collect_item(self):
         if self.location.item is not None:
             item = self.location.item 

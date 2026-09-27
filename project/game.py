@@ -48,9 +48,10 @@ else:
         print("\n--- MAIN MENU ---")
         print("1. start")
         print("2. explore")
-        print("3. collect item")
-        print("4. inventory")
-        print("5. end")
+        print("3. move")
+        print("4. collect item")
+        print("5. inventory")
+        print("6. end")
 
         command = input("Enter command: ")
 
@@ -61,12 +62,28 @@ else:
             explore(player)
 
         elif command == "3":
+            print("\nWhere do you want to go?")
+            print("1. Kitchen")
+            print("2. Bedroom")
+            print("3. Well")
+             
+            destination = input("Choose room: ")
+            if destination == "1":
+                player.move(kitchen)
+            elif destination == "2":
+                player.move(bedroom)
+            elif destination == "3":
+                player.move(well)
+            else:
+                print("Unknown room.")
+        
+        elif command == "4":
             player.collect_item()
 
-        elif command == "4":
+        elif command == "5":
             player.show_inventory()
 
-        elif command == "5":
+        elif command == "6":
             print("Goodbye!")
             break
 
