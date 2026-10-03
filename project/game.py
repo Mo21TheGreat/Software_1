@@ -16,6 +16,28 @@ def explore(player):
     else:
         print("There are no more items here.")
 
+def show_intro():
+    with open("intro.txt", "r") as file:
+        text = file.read()
+        print(text)
+
+
+def show_instructions():
+    with open("instructions.txt", "r") as file:
+        text = file.read()
+        print(text)
+
+def save_game(player):
+    with open("save.txt", "w") as file:
+        file.write(player.name + "\n")
+        file.write(player.location.name + "\n")
+
+        for item in player.items:
+            file.write(item.name + "\n")
+
+    print("Game saved!")
+
+
 
 name = input("Write your beautiful name: ")
 age = int(input("Enter your age: "))
@@ -51,7 +73,8 @@ else:
         print("3. move")
         print("4. collect item")
         print("5. inventory")
-        print("6. end")
+        print("6. save game")
+        print("7. end")
 
         command = input("Enter command: ")
 
@@ -84,6 +107,9 @@ else:
             player.show_inventory()
 
         elif command == "6":
+            save_game(player)
+
+        elif command == "7":
             print("Goodbye!")
             break
 
