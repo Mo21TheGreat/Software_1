@@ -1,4 +1,3 @@
-
 from item import Item
 from room import Room
 from player import Player
@@ -39,7 +38,7 @@ def save_game(player):
 
 
 
-name = input("Write your beautiful name: ")
+name = input("Enter your beautiful name: ")
 age = int(input("Enter your age: "))
 
 
@@ -48,33 +47,44 @@ print("Age:",age)
 
 if age < 12:
     print("You are a minor. The program will now shut down. ")
+    #####
 else:
-    print("Welcome to the game!")
+    print("Welcome to Escape!")
 
 
     #Items
-    sword = Item("Sword", 5)
-    knife = Item("Knife", 1)
-    water_bucket = Item("Water bucket", 2)
+    flashlight = Item("Flashlight", 2)
+    fork = Item("Fork", 0.5)
+    remote = Item("Remote", 0.8)
+    razor = Item("Razor", 0.4)
+    escape_key = Item("ESCAPE KEY", 0.2)
+    
 
     #Rooms
-    kitchen = Room("Kitchen", knife)
-    bedroom = Room("Bedroom", sword)
-    well = Room("Well", water_bucket)
+    kitchen = Room("Kitchen", fork)
+    bedroom = Room("Bedroom", flashlight)
+    living_room = Room("Living Room", remote)
+    front_yard = Room("Front yard")
+    bathroom = Room("Bathroom", razor)
+    laundry = Room("Laundry", escape_key)
 
     #Player
-    player = Player(name, kitchen)
+    player = Player(name, bedroom)
 
 
     while True:
-        print("\n--- MAIN MENU ---")
-        print("1. start")
-        print("2. explore")
-        print("3. move")
-        print("4. collect item")
-        print("5. inventory")
-        print("6. save game")
-        print("7. end")
+        
+        player.show_menu_inventory()
+
+
+        print("\n----- MAIN MENU -----")
+        print("1. Start")
+        print("2. Explore")
+        print("3. Move")
+        print("4. Collect item")
+        print("5. Instructions")
+        print("6. Save game")
+        print("7. End")
 
         command = input("Enter command: ")
 
@@ -88,7 +98,10 @@ else:
             print("\nWhere do you want to go?")
             print("1. Kitchen")
             print("2. Bedroom")
-            print("3. Well")
+            print("3. Living room")
+            print("4. Bathroom")
+            print("5. Front yard")
+            print("6. Laundry")
              
             destination = input("Choose room: ")
             if destination == "1":
@@ -96,7 +109,27 @@ else:
             elif destination == "2":
                 player.move(bedroom)
             elif destination == "3":
-                player.move(well)
+                player.move(living_room)
+            elif destination == "4":
+                player.move(bathroom)
+            elif destination == "5":
+                has_key = False
+
+                for item in player.items:
+                    if item.name == "ESCAPE KEY":
+                        has_key = True
+
+                if has_key:
+                    player.move(front_yard)
+                    print("\nYou unlocked the door!")
+                    print("You escaped!")
+                    print("Congrats, YOU WON!")
+                    break
+                else:
+                    print("The front yard is locked. You need the ESCAPE KEY!")
+            
+            elif destination == "6":
+                player.move(laundry)
             else:
                 print("Unknown room.")
         
@@ -104,7 +137,7 @@ else:
             player.collect_item()
 
         elif command == "5":
-            player.show_inventory()
+            show_instructions()
 
         elif command == "6":
             save_game(player)

@@ -1,0 +1,16 @@
+
+!YOU NEED TO HAVE PYTHON INSTALLED TO PLAY THIS GAME!
+
+
+HOW TO PLAY
+
+1. Explore the rooms.
+2. Collect useful items.
+3. Find the ESCAPE KEY.
+4. Go to the front yard.
+5. Escape the house.
+
+
+You can find the options on main menu.
+
+Good luck!

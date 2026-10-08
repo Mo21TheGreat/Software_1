@@ -6,7 +6,7 @@ class Player:
 
     def move(self, new_location):
         self.location = new_location
-        print("You moved to:", self.location.name)
+        print("\nYou moved to:", self.location.name)
 
     def collect_item(self):
         if self.location.item is not None:
@@ -26,3 +26,12 @@ class Player:
         else: 
             for item in self.items:
                 print(item.name, "-", item.weight, "kg")
+
+    def show_menu_inventory(self):
+        print("\n----- INVENTORY -----")
+        
+        if len(self.items) == 0:
+            print("Empty")
+        else:
+            for item in self.items:
+                print("-", item.name)

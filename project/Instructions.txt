@@ -1,8 +1,0 @@
-Commands:
-1. Start
-2. Explore
-3. Move
-4. Collect item
-5. Inventory
-6. Save game
-7. End
