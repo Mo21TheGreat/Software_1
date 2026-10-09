@@ -14,7 +14,7 @@ The objective of the game is to find the ESCAPE KEY and escape the house.
 
 ## How to play
 
-The player starts in the bedroom.
+The player starts in the living room.
 
 The player can:
 - Start the game
@@ -23,7 +23,7 @@ The player can:
 - Collect items
 - Check their inventory
 - Read the instructions
-- Save the game
+- Save the game and load the game
 - End the game
 
 The front yard is locked until the player finds the ESCAPE KEY.

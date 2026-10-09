@@ -1,2 +1,6 @@
+
+
+
 Hello, welcome to ESCAPE!
+
 Here the goal is to find the ESCAPE KEY and escape the abandoned house!
